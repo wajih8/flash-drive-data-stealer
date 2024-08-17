@@ -33,7 +33,7 @@ this repo for is a script for gathering any file from any flash drive you plug-i
 You can use the decode.py from the repo to decrypt the output files.
 ```
 
-# 'Warning':
+# `Warning`:
 
 when you run it for the first time it will coppy a file twice it will do it one time
-and if you need to reset delete the ".dat" file and the files in the director ywith .data format.
+and if you need to reset delete the `.dat` file and the files in the director ywith `.data` format.
