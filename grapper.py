@@ -9,18 +9,19 @@ try:
     with open("config.ini", "r")as f:
         t=[]
         for i in range(2):
-            p=f.readline(-1)
+            p=f.readline()[:-1]
             if "None"in p:
                 t.append(None)
             else:
                 t.append(p)
-        x=f.readline(-1)
+        x=f.readline()[:-1]
         t2=[]
         while x.find(',')!=-1:
             t2.append(x[:x.find(',')])
             x=x[x.find(',')+1:]
         t2.append(x)
         t.append(t2)
+        
 except:
     exit(2)
 
@@ -52,6 +53,7 @@ def rands():
             ch += chr(randint(ord("A"), ord("Z")))
         else:
             ch += chr(randint(ord("0"), ord("9")))
+    
     return ch+".data"
 
 
@@ -77,18 +79,27 @@ def copy_spe(so, dis, maxs=None, exte=None):
                 e = dict()
                 e["original"] = disp
                 e["fake"] = disp2
+                
+
+
+                print("test:",disp not in copf)
                 if disp not in copf:
                     try:
+                        print(1)
                         shutil.copy(fip, disp2)
                         copf.append(disp)
                         cops.append(e)
                     except:
                         pass
-
+    try:
+        with open("das.dat","rb")as f:
+            xa=load(f)
+    except:xa=[]
+    
+    for i in cops:
+        xa.append(i)
     with open("das.dat", "ab")as f:
-        dump(cops, f)
-
-    print(copf)
+        dump(xa, f)
 
 
 def get_des(x, desa):
@@ -98,12 +109,12 @@ def get_des(x, desa):
             fp = os.path.join(root, file)
             chs.append(fp)
     des = []
-    print(chs)
+    #print(chs)
     for i in desa:
-        print(i["fake"])
+        #print(i["fake"])
         if i["fake"] in chs:
             des.append(i["original"])
-    print("-----------------------------------------------")
+    #print("-----------------------------------------------")
     return des
 
 
