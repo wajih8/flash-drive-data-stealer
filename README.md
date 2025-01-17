@@ -2,7 +2,7 @@
 
 this repo for is a script for gathering any file from any flash drive you plug-in your pc and crypt it
 
-# CookieStealer
+
 
 # What does it do:
 
