@@ -11,7 +11,7 @@ this repo for is a script for gathering any file from any flash drive you plug-i
 
 2. crypting the file and change their names.
 
-3. Creates a logs in the same directry to store decrypt files.
+3. Creates a logs in the same directry to store decryption files.
 ```
 
 # Installation:
